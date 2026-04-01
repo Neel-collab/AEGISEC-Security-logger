@@ -1,0 +1,28 @@
+MSBuild version 17.14.40+3e7442088 for .NET Framework
+Build started 27-02-2026 18:40:33.
+
+Project "C:\Users\neelp\source\repos\dbms.net\dbms.net.vbproj" on node 1 (Build target(s)).
+GenerateBindingRedirects:
+Skipping target "GenerateBindingRedirects" because all output files are up-to-date with respect to the input files.
+CoreResGen:
+  No resources are out of date with respect to their source files. Skipping resource generation.
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+CoreCompile:
+  C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\Roslyn\vbc.exe /noconfig /imports:Microsoft.VisualBasic,System,System.Collections,System.Collections.Generic,System.Data,System.Drawing,System.Diagnostics,System.Windows.Forms,System.Linq,System.Xml.Linq,System.Threading.Tasks /optioncompare:Binary /optionexplicit+ /optionstrict:custom /nowarn:42016,41999,42017,42018,42019,42032,42036,42020,42021,42022 /optioninfer+ /nostdlib /platform:anycpu32bitpreferred /rootnamespace:AegisSec.net /sdkpath:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2" /highentropyva+ /doc:obj\Debug\dbms.net.xml /define:"CONFIG=\"Debug\",DEBUG=-1,TRACE=-1,_MyType=\"WindowsForms\",PLATFORM=\"AnyCPU\"" /reference:C:\Users\neelp\source\repos\dbms.net\packages\MongoDB.Bson.2.28.0\lib\net472\MongoDB.Bson.dll,C:\Users\neelp\source\repos\dbms.net\packages\MongoDB.Driver.Core.2.28.0\lib\net472\MongoDB.Driver.Core.dll,C:\Users\neelp\source\repos\dbms.net\packages\MongoDB.Driver.2.28.0\lib\net472\MongoDB.Driver.dll,C:\Users\neelp\source\repos\dbms.net\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll,"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Core.dll","C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.DataSetExtensions.dll","C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.dll","C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Deployment.dll","C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll","C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Drawing.dll","C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Net.Http.dll","C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Facades\System.Runtime.InteropServices.RuntimeInformation.dll","C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Windows.Forms.DataVisualization.dll","C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Windows.Forms.dll","C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Xml.dll","C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Xml.Linq.dll" /main:AegisSec.net.My.MyApplication /debug+ /debug:full /filealign:512 /out:obj\Debug\dbms.net.exe /subsystemversion:6.00 /resource:obj\Debug\AegisSec.net.Form1.resources /resource:obj\Debug\AegisSec.net.Dashboard.resources /resource:obj\Debug\AegisSec.net.Resources.resources /target:winexe /utf8output /deterministic+ Form1.vb Form1.Designer.vb Form2.Designer.vb Form2.vb "My Project\AssemblyInfo.vb" "My Project\Application.Designer.vb" "My Project\Resources.Designer.vb" "My Project\Settings.Designer.vb" SecurityLogger.vb MongoHelper.vb "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.vb"
+C:\Users\neelp\source\repos\dbms.net\Form1.vb(256,75): error BC30506: Handles clause requires a WithEvents variable defined in the containing type or one of its base types. [C:\Users\neelp\source\repos\dbms.net\dbms.net.vbproj]
+C:\Users\neelp\source\repos\dbms.net\Form1.Designer.vb(280,23): error BC30260: 'loginTimer' is already declared as 'Private WithEvents loginTimer As Timer' in this class. [C:\Users\neelp\source\repos\dbms.net\dbms.net.vbproj]
+  CompilerServer: server - server processed compilation - dbms.net
+Done Building Project "C:\Users\neelp\source\repos\dbms.net\dbms.net.vbproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\neelp\source\repos\dbms.net\dbms.net.vbproj" (Build target) (1) ->
+(CoreCompile target) -> 
+  C:\Users\neelp\source\repos\dbms.net\Form1.vb(256,75): error BC30506: Handles clause requires a WithEvents variable defined in the containing type or one of its base types. [C:\Users\neelp\source\repos\dbms.net\dbms.net.vbproj]
+  C:\Users\neelp\source\repos\dbms.net\Form1.Designer.vb(280,23): error BC30260: 'loginTimer' is already declared as 'Private WithEvents loginTimer As Timer' in this class. [C:\Users\neelp\source\repos\dbms.net\dbms.net.vbproj]
+
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:00.29

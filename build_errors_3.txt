@@ -1,0 +1,15 @@
+  Determining projects to restore...
+  Nothing to do. None of the projects specified contain packages to restore.
+C:\Program Files\dotnet\sdk\9.0.310\Microsoft.Common.CurrentVersion.targets(2433,5): warning MSB3245: Could not resolve this reference. Could not locate the assembly "SharpCompress, Version=0.30.1.0, Culture=neutral, PublicKeyToken=afb0aef974e28163, processorArchitecture=MSIL". Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors. [C:\Users\neelp\source\repos\dbms.net\dbms.net.vbproj]
+C:\Program Files\dotnet\sdk\9.0.310\Microsoft.Common.CurrentVersion.targets(3455,5): error MSB4216: Could not run the "GenerateResource" task because MSBuild could not create or connect to a task host with runtime "NET" and architecture "x86".  Please ensure that (1) the requested runtime and/or architecture are available on the machine, and (2) that the required executable "C:\Program Files\dotnet\sdk\9.0.310\MSBuild.dll" exists and can be run. [C:\Users\neelp\source\repos\dbms.net\dbms.net.vbproj]
+C:\Program Files\dotnet\sdk\9.0.310\Microsoft.Common.CurrentVersion.targets(3479,7): error MSB4028: The "GenerateResource" task's outputs could not be retrieved from the "FilesWritten" parameter. Object type Microsoft.Build.Tasks.GenerateResource does not match target type Microsoft.Build.BackEnd.TaskHostTask. [C:\Users\neelp\source\repos\dbms.net\dbms.net.vbproj]
+
+Build FAILED.
+
+C:\Program Files\dotnet\sdk\9.0.310\Microsoft.Common.CurrentVersion.targets(2433,5): warning MSB3245: Could not resolve this reference. Could not locate the assembly "SharpCompress, Version=0.30.1.0, Culture=neutral, PublicKeyToken=afb0aef974e28163, processorArchitecture=MSIL". Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors. [C:\Users\neelp\source\repos\dbms.net\dbms.net.vbproj]
+C:\Program Files\dotnet\sdk\9.0.310\Microsoft.Common.CurrentVersion.targets(3455,5): error MSB4216: Could not run the "GenerateResource" task because MSBuild could not create or connect to a task host with runtime "NET" and architecture "x86".  Please ensure that (1) the requested runtime and/or architecture are available on the machine, and (2) that the required executable "C:\Program Files\dotnet\sdk\9.0.310\MSBuild.dll" exists and can be run. [C:\Users\neelp\source\repos\dbms.net\dbms.net.vbproj]
+C:\Program Files\dotnet\sdk\9.0.310\Microsoft.Common.CurrentVersion.targets(3479,7): error MSB4028: The "GenerateResource" task's outputs could not be retrieved from the "FilesWritten" parameter. Object type Microsoft.Build.Tasks.GenerateResource does not match target type Microsoft.Build.BackEnd.TaskHostTask. [C:\Users\neelp\source\repos\dbms.net\dbms.net.vbproj]
+    1 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:01.68

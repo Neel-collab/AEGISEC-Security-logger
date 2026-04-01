@@ -1,0 +1,94 @@
+@page "/logs"
+@inject AegisSec.Client.Services.SecurityService Security
+
+<header class="header">
+    <h2 class="neon-text">SECURITY LEDGER</h2>
+    <div style="color: var(--text-secondary); font-size: 0.9rem;">
+        DECRYPTING REAL-TIME TELEMETRY...
+    </div>
+</header>
+
+<div class="cyber-panel" style="padding: 0; overflow: hidden; border-color: rgba(0, 242, 255, 0.3);">
+    <table class="cyber-table">
+        <thead>
+            <tr>
+                <th>TIMESTAMP</th>
+                <th>MODULE</th>
+                <th>EVENT</th>
+                <th>SOURCE</th>
+                <th>SEVERITY</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (logs == null)
+            {
+                <tr><td colspan="5" style="text-align: center; padding: 40px;">UPLINKING DATA...</td></tr>
+            }
+            else if (logs.Count == 0)
+            {
+                <tr><td colspan="5" style="text-align: center; padding: 40px;">NO ANOMALIES DETECTED</td></tr>
+            }
+            else
+            {
+                @foreach (var log in logs)
+                {
+                    <tr>
+                        <td style="color: var(--text-secondary)">@log.Timestamp.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                        <td class="neon-text" style="font-size: 0.8rem;">@log.EventType</td>
+                        <td>@log.Description</td>
+                        <td style="font-family: Consolas, monospace;">@log.SourceIP</td>
+                        <td>
+                            <span class="badge @GetSeverityClass(log.Severity)">@log.Severity</span>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+<style>
+    .cyber-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+    }
+    .cyber-table th {
+        background: rgba(13, 17, 23, 0.8);
+        color: var(--gold);
+        text-align: left;
+        padding: 15px;
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+        border-bottom: 2px solid #30363d;
+    }
+    .cyber-table td {
+        padding: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .badge {
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 0.7rem;
+        font-weight: bold;
+    }
+    .badge-critical { background: rgba(255, 82, 82, 0.2); color: #ff5252; border: 1px solid #ff5252; }
+    .badge-high { background: rgba(255, 171, 0, 0.2); color: #ffab00; border: 1px solid #ffab00; }
+    .badge-low { background: rgba(0, 242, 255, 0.2); color: #00f2ff; border: 1px solid #00f2ff; }
+</style>
+
+@code {
+    private List<AegisSec.Client.Models.SecurityLog>? logs;
+
+    protected override async Task OnInitializedAsync()
+    {
+        logs = await Security.GetLogsAsync();
+    }
+
+    private string GetSeverityClass(string severity) => severity.ToLower() switch
+    {
+        "critical" => "badge-critical",
+        "high" => "badge-high",
+        _ => "badge-low"
+    };
+}

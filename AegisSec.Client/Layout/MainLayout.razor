@@ -1,0 +1,90 @@
+@inherits LayoutComponentBase
+@inject NavigationManager Navigation
+@inject AegisSec.Client.Services.SecurityService Security
+@implements IDisposable
+
+<div class="page">
+    <div class="sidebar">
+        <div class="logo glitch" data-text="AegisSec">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span><span class="gold-text">Aegis</span>Sec</span>
+        </div>
+        <nav>
+            <ul>
+                <li><NavLink href="/" Match="NavLinkMatch.All"><i class="fa-solid fa-chart-line"></i> Dashboard</NavLink></li>
+                <li><NavLink href="/users"><i class="fa-solid fa-users"></i> Identities</NavLink></li>
+                <li><NavLink href="/logs"><i class="fa-solid fa-file-shield"></i> Ledger</NavLink></li>
+                <li><NavLink href="/settings"><i class="fa-solid fa-gear"></i> Settings</NavLink></li>
+            </ul>
+        </nav>
+        <div style="position: absolute; bottom: 20px; width: calc(100% - 40px);">
+            <button class="btn-cyber" style="width: 100%;" @onclick="Logout">
+                <i class="fa-solid fa-power-off"></i> LOGOUT
+            </button>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <header class="header">
+            <h2 class="neon-text glitch" data-text="SYSTEM OVERVIEW">SYSTEM OVERVIEW</h2>
+            <div style="color: var(--text-secondary); font-size: 0.9rem;">
+                <i class="fa-solid fa-clock"></i> @_currentTime | UPLINK IP: <span style="font-family: monospace;">104.22.19.42</span> | UPLINK: <span style="color: var(--neon-green)">STABLE</span>
+            </div>
+        </header>
+
+        @Body
+    </main>
+</div>
+
+@code {
+    private System.Timers.Timer? _timer;
+    private string _currentTime = DateTime.Now.ToString("HH:mm:ss");
+
+    protected override void OnInitialized()
+    {
+        _timer = new System.Timers.Timer(1000);
+        _timer.Elapsed += (sender, e) =>
+        {
+            _currentTime = DateTime.Now.ToString("HH:mm:ss");
+            InvokeAsync(StateHasChanged);
+        };
+        _timer.Start();
+    }
+
+    private string? FatalError;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        try 
+        {
+            if (firstRender && !Navigation.Uri.Contains("/login"))
+            {
+                var auth = await Security.IsAuthenticatedAsync();
+                if (!auth)
+                {
+                    Navigation.NavigateTo("/login");
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            FatalError = ex.ToString();
+            StateHasChanged();
+        }
+    }
+
+    private async Task Logout()
+    {
+        await Security.LogoutAsync();
+        Navigation.NavigateTo("/login");
+    }
+
+    public void Dispose()
+    {
+        if (_timer != null)
+        {
+            _timer.Stop();
+            _timer.Dispose();
+        }
+    }
+}

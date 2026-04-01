@@ -1,0 +1,27 @@
+Using launch settings from AegisSec.Server\Properties\launchSettings.json...
+Building...
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5000
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\neelp\source\repos\dbms.net\AegisSec.Server
+
+==================================================
+          AEGIS-SEC 2FA INTERCEPT
+    USER: Neel99
+    CODE: 793684
+==================================================
+
+
+[ AEGIS-SEC TELEMETRY ]: INITIATING SMS UPLINK...
+[ TARGET ]: +919136599532
+[ MSG ]: AEGIS-SEC: Verification code is 793684. Valid for 5 minutes.
+
+**************************************************
+[ CRITICAL Twilio DISPATCH FAILURE ]
+ERROR: Authenticate
+**************************************************
+

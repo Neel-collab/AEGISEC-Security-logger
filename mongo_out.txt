@@ -1,0 +1,1 @@
+{"_id":{"$oid":"69a19f45098b90a452628ca0"},"username":"admin","role":"Admin","status":"ACTIVE","email":"admin@aegissec.com","phone":"+15551234567","password":"password123","lastLogin":{"$date":"2026-03-04T06:53:14.869Z"},"failedAttempts":0}

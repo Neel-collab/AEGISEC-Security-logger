@@ -1,0 +1,23 @@
+<ErrorBoundary>
+    <ChildContent>
+        <Router AppAssembly="@typeof(App).Assembly">
+            <Found Context="routeData">
+                <RouteView RouteData="@routeData" DefaultLayout="@typeof(Layout.MainLayout)" />
+                <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+            </Found>
+            <NotFound>
+                <PageTitle>Not found</PageTitle>
+                <LayoutView Layout="@typeof(Layout.MainLayout)">
+                    <p role="alert">Access Denied. Node not found.</p>
+                </LayoutView>
+            </NotFound>
+        </Router>
+    </ChildContent>
+    <ErrorContent Context="ex">
+        <div style="padding: 20px; color: #ff5252; background: #1a0000; border: 1px solid red; font-family: monospace;">
+            <h3>UPLINK CRASH DETECTED</h3>
+            <p>The Blazor runtime encountered a fatal error during initialization.</p>
+            <pre style="white-space: pre-wrap;">@ex.ToString()</pre>
+        </div>
+    </ErrorContent>
+</ErrorBoundary>

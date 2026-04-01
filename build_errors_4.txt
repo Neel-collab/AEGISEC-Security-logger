@@ -1,0 +1,116 @@
+MSBuild version 17.14.40+3e7442088 for .NET Framework
+Build started 28-02-2026 00:54:20.
+
+Project "C:\Users\neelp\source\repos\dbms.net\dbms.net.sln" on node 1 (Build target(s)).
+ValidateSolutionConfiguration:
+  Building solution configuration "Debug|Any CPU".
+Project "C:\Users\neelp\source\repos\dbms.net\dbms.net.sln" (1) is building "C:\Users\neelp\source\repos\dbms.net\dbms.net.vbproj" (2) on node 1 (default targets).
+ResolveAssemblyReferences:
+  Primary reference "SharpCompress, Version=0.30.1.0, Culture=neutral, PublicKeyToken=afb0aef974e28163, processorArchitecture=MSIL".
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(2433,5): warning MSB3245: Could not resolve this reference. Could not locate the assembly "SharpCompress, Version=0.30.1.0, Culture=neutral, PublicKeyToken=afb0aef974e28163, processorArchitecture=MSIL". Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors. [C:\Users\neelp\source\repos\dbms.net\dbms.net.vbproj]
+          For SearchPath "{HintPathFromItem}".
+          Considered "C:\Users\neelp\source\repos\dbms.net\packages\SharpCompress.0.30.1\lib\net461\SharpCompress.dll",
+  			but its name "SharpCompress, Version=0.30.1.0, Culture=neutral, PublicKeyToken=afb0a02973931d96"
+  			didn't match the expected name "SharpCompress, Version=0.30.1.0, Culture=neutral, PublicKeyToken=afb0aef974e28163, processorArchitecture=MSIL".
+          For SearchPath "{TargetFrameworkDirectory}".
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\SharpCompress.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\SharpCompress.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\SharpCompress.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Facades\SharpCompress.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Facades\SharpCompress.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Facades\SharpCompress.exe", but it didn't exist.
+          For SearchPath "{AssemblyFoldersFromConfig:C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\AssemblyFolders.config,v4.7.2}".
+          Considered "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\SqlDb\SharpCompress.winmd", but it didn't exist.
+          Considered "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\SqlDb\SharpCompress.dll", but it didn't exist.
+          Considered "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\SqlDb\SharpCompress.exe", but it didn't exist.
+          Considered "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\PublicAssemblies\SharpCompress.winmd", but it didn't exist.
+          Considered "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\PublicAssemblies\SharpCompress.dll", but it didn't exist.
+          Considered "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\PublicAssemblies\SharpCompress.exe", but it didn't exist.
+          Considered "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\ReferenceAssemblies\v4.5\SharpCompress.winmd", but it didn't exist.
+          Considered "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\ReferenceAssemblies\v4.5\SharpCompress.dll", but it didn't exist.
+          Considered "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\ReferenceAssemblies\v4.5\SharpCompress.exe", but it didn't exist.
+          Considered "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\ReferenceAssemblies\v4.0\SharpCompress.winmd", but it didn't exist.
+          Considered "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\ReferenceAssemblies\v4.0\SharpCompress.dll", but it didn't exist.
+          Considered "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\ReferenceAssemblies\v4.0\SharpCompress.exe", but it didn't exist.
+          Considered "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\ReferenceAssemblies\v2.0\SharpCompress.winmd", but it didn't exist.
+          Considered "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\ReferenceAssemblies\v2.0\SharpCompress.dll", but it didn't exist.
+          Considered "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\ReferenceAssemblies\v2.0\SharpCompress.exe", but it didn't exist.
+          For SearchPath "{Registry:Software\Microsoft\.NETFramework,v4.7.2,AssemblyFoldersEx}".
+          Considered AssemblyFoldersEx locations.
+          For SearchPath "{AssemblyFolders}".
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\SharpCompress.winmd", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\SharpCompress.dll", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\SharpCompress.exe", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2903.0\SharpCompress.winmd", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2903.0\SharpCompress.dll", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2903.0\SharpCompress.exe", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2904.0\SharpCompress.winmd", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2904.0\SharpCompress.dll", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2904.0\SharpCompress.exe", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2905.0\SharpCompress.winmd", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2905.0\SharpCompress.dll", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2905.0\SharpCompress.exe", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2906.0\SharpCompress.winmd", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2906.0\SharpCompress.dll", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2906.0\SharpCompress.exe", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2907.0\SharpCompress.winmd", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2907.0\SharpCompress.dll", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2907.0\SharpCompress.exe", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2908.0\SharpCompress.winmd", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2908.0\SharpCompress.dll", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2908.0\SharpCompress.exe", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2909.0\SharpCompress.winmd", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2909.0\SharpCompress.dll", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2909.0\SharpCompress.exe", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2910.0\SharpCompress.winmd", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2910.0\SharpCompress.dll", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2910.0\SharpCompress.exe", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2911.0\SharpCompress.winmd", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2911.0\SharpCompress.dll", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2911.0\SharpCompress.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\SharpCompress.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\SharpCompress.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\SharpCompress.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\SharpCompress.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\SharpCompress.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\SharpCompress.exe", but it didn't exist.
+          For SearchPath "{GAC}".
+          Considered "SharpCompress, Version=0.30.1.0, Culture=neutral, PublicKeyToken=afb0aef974e28163, processorArchitecture=MSIL", which was not found in the GAC.
+          For SearchPath "{RawFileName}".
+          Considered treating "SharpCompress, Version=0.30.1.0, Culture=neutral, PublicKeyToken=afb0aef974e28163, processorArchitecture=MSIL" as a file name, but it didn't exist.
+          For SearchPath "bin\Debug\".
+          Considered "bin\Debug\SharpCompress.winmd", but it didn't exist.
+          Considered "bin\Debug\SharpCompress.dll",
+  			but its name "SharpCompress, Version=0.30.1.0, Culture=neutral, PublicKeyToken=afb0a02973931d96"
+  			didn't match the expected name "SharpCompress, Version=0.30.1.0, Culture=neutral, PublicKeyToken=afb0aef974e28163, processorArchitecture=MSIL".
+          Considered "bin\Debug\SharpCompress.exe", but it didn't exist.
+GenerateBindingRedirects:
+Skipping target "GenerateBindingRedirects" because all output files are up-to-date with respect to the input files.
+CoreResGen:
+  No resources are out of date with respect to their source files. Skipping resource generation.
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+CoreCompile:
+  C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\Roslyn\vbc.exe /noconfig /imports:Microsoft.VisualBasic,System,System.Collections,System.Collections.Generic,System.Data,System.Drawing,System.Diagnostics,System.Windows.Forms,System.Linq,System.Xml.Linq,System.Threading.Tasks /optioncompare:Binary /optionexplicit+ /optionstrict:custom /nowarn:42016,41999,42017,42018,42019,42032,42036,42020,42021,42022 /optioninfer+ /nostdlib /platform:anycpu32bitpreferred /rootnamespace:AegisSec.net /sdkpath:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2" /highentropyva+ /doc:obj\Debug\dbms.net.xml /define:"CONFIG=\"Debug\",DEBUG=-1,TRACE=-1,_MyType=\"WindowsForms\",PLATFORM=\"AnyCPU\"" /reference:C:\Users\neelp\source\repos\dbms.net\packages\DnsClient.1.6.1\lib\net471\DnsClient.dll,C:\Users\neelp\source\repos\dbms.net\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll,C:\Users\neelp\source\repos\dbms.net\packages\Microsoft.Extensions.Logging.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll,C:\Users\neelp\source\repos\dbms.net\packages\MongoDB.Bson.2.28.0\lib\net472\MongoDB.Bson.dll,C:\Users\neelp\source\repos\dbms.net\packages\MongoDB.Driver.Core.2.28.0\lib\net472\MongoDB.Driver.Core.dll,C:\Users\neelp\source\repos\dbms.net\packages\MongoDB.Driver.2.28.0\lib\net472\MongoDB.Driver.dll,C:\Users\neelp\source\repos\dbms.net\packages\MongoDB.Libmongocrypt.1.11.0\lib\net472\MongoDB.Libmongocrypt.dll,C:\Users\neelp\source\repos\dbms.net\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll,C:\Users\neelp\source\repos\dbms.net\packages\Snappier.1.0.0\lib\netstandard2.0\Snappier.dll,C:\Users\neelp\source\repos\dbms.net\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll,"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Core.dll","C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.DataSetExtensions.dll","C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.dll","C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Deployment.dll","C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll","C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Drawing.dll",C:\Users\neelp\source\repos\dbms.net\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll,"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Net.Http.dll",C:\Users\neelp\source\repos\dbms.net\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll,"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Facades\System.Runtime.InteropServices.RuntimeInformation.dll",C:\Users\neelp\source\repos\dbms.net\packages\System.Text.Encoding.CodePages.5.0.0\lib\net461\System.Text.Encoding.CodePages.dll,C:\Users\neelp\source\repos\dbms.net\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll,"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Windows.Forms.DataVisualization.dll","C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Windows.Forms.dll","C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Xml.dll","C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Xml.Linq.dll",C:\Users\neelp\source\repos\dbms.net\packages\ZstdSharp.Port.0.7.3\lib\net461\ZstdSharp.dll,"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Facades\netstandard.dll" /main:AegisSec.net.My.MyApplication /debug+ /debug:full /filealign:512 /out:obj\Debug\dbms.net.exe /subsystemversion:6.00 /resource:obj\Debug\AegisSec.net.Form1.resources /resource:obj\Debug\AegisSec.net.Dashboard.resources /resource:obj\Debug\AegisSec.net.Resources.resources /target:winexe /utf8output /deterministic+ Form1.vb Form1.Designer.vb Form2.Designer.vb Form2.vb "My Project\AssemblyInfo.vb" "My Project\Application.Designer.vb" "My Project\Resources.Designer.vb" "My Project\Settings.Designer.vb" SecurityLogger.vb MongoHelper.vb "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.vb"
+C:\Users\neelp\source\repos\dbms.net\Form1.vb(322,10): error BC30037: Character is not valid. [C:\Users\neelp\source\repos\dbms.net\dbms.net.vbproj]
+  CompilerServer: server - server processed compilation - dbms.net
+Done Building Project "C:\Users\neelp\source\repos\dbms.net\dbms.net.vbproj" (default targets) -- FAILED.
+Done Building Project "C:\Users\neelp\source\repos\dbms.net\dbms.net.sln" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\neelp\source\repos\dbms.net\dbms.net.sln" (Build target) (1) ->
+"C:\Users\neelp\source\repos\dbms.net\dbms.net.vbproj" (default target) (2) ->
+(ResolveAssemblyReferences target) -> 
+  C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(2433,5): warning MSB3245: Could not resolve this reference. Could not locate the assembly "SharpCompress, Version=0.30.1.0, Culture=neutral, PublicKeyToken=afb0aef974e28163, processorArchitecture=MSIL". Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors. [C:\Users\neelp\source\repos\dbms.net\dbms.net.vbproj]
+
+
+"C:\Users\neelp\source\repos\dbms.net\dbms.net.sln" (Build target) (1) ->
+"C:\Users\neelp\source\repos\dbms.net\dbms.net.vbproj" (default target) (2) ->
+(CoreCompile target) -> 
+  C:\Users\neelp\source\repos\dbms.net\Form1.vb(322,10): error BC30037: Character is not valid. [C:\Users\neelp\source\repos\dbms.net\dbms.net.vbproj]
+
+    1 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:00.24

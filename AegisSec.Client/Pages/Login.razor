@@ -1,0 +1,136 @@
+@page "/login"
+@layout EmptyLayout
+@inject AegisSec.Client.Services.SecurityService Security
+@inject NavigationManager Navigation
+
+<div class="login-container">
+    <div class="cyber-panel login-panel">
+        <div class="header">
+            <h1 class="gold-text"><i class="fa-solid fa-shield-halved"></i> AEGIS-SEC</h1>
+            <p class="neon-text">PERIMETER DEFENSE ACTIVE</p>
+        </div>
+
+        @if (!isOtpStage)
+        {
+            <div class="form-group">
+                <label>IDENTIFIER</label>
+                <input type="text" @bind="username" class="form-control-cyber" placeholder="ID-9901" />
+            </div>
+            <div class="form-group">
+                <label>ACCESS KEY</label>
+                <input type="password" @bind="password" class="form-control-cyber" />
+            </div>
+            <button class="btn-cyber w-100 mt-4" @onclick="HandleLogin">AUTHORIZE</button>
+        }
+        else
+        {
+            <div class="otp-block">
+                <h3 class="pink-text">2FA VERIFICATION</h3>
+                <p>Enter the 6-digit code sent to @targetPhone</p>
+                <input type="text" @bind="otp" class="otp-input" maxlength="6" />
+                <button class="btn-cyber w-100 mt-4" style="border-color: var(--neon-pink); color: var(--neon-pink);" @onclick="HandleVerify">VALIDATE</button>
+            </div>
+        }
+
+        @if (!string.IsNullOrEmpty(errorMessage))
+        {
+            <p class="error-text">@errorMessage</p>
+        }
+
+        <div class="footer">
+            v3.0 — SECURED BY AEGIS-NET
+        </div>
+    </div>
+</div>
+
+<style>
+    .login-container {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: radial-gradient(circle at center, #0f1218 0%, #05070a 100%);
+    }
+    .login-panel {
+        width: 400px;
+        text-align: center;
+        padding: 40px;
+    }
+    .login-panel h1 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 5px; }
+    .form-group { text-align: left; margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 8px; font-weight: bold; letter-spacing: 1px; }
+    .form-control-cyber {
+        width: 100%;
+        background: #0d1117;
+        border: 1px solid #30363d;
+        color: white;
+        padding: 12px;
+        border-radius: 4px;
+        font-family: Consolas, monospace;
+    }
+    .form-control-cyber:focus { border-color: var(--neon-cyan); outline: none; box-shadow: 0 0 10px rgba(0, 242, 255, 0.2); }
+    .otp-input {
+        width: 100%;
+        background: rgba(255, 0, 212, 0.05);
+        border: 1px solid var(--neon-pink);
+        color: var(--neon-pink);
+        font-size: 2.5rem;
+        text-align: center;
+        letter-spacing: 10px;
+        font-weight: bold;
+        margin-top: 20px;
+        border-radius: 4px;
+    }
+    .error-text { color: #ff5252; font-size: 0.8rem; margin-top: 15px; }
+    .footer { margin-top: 30px; font-size: 0.7rem; color: #444; }
+    .w-100 { width: 100%; }
+    .mt-4 { margin-top: 20px; }
+</style>
+
+@code {
+    private string username = "";
+    private string password = "";
+    private string otp = "";
+    private bool isOtpStage = false;
+    private string errorMessage = "";
+    private string targetPhone = "";
+
+    private async Task HandleLogin()
+    {
+        try 
+        {
+            errorMessage = "UPLINKING...";
+            var result = await Security.LoginAsync(username, password);
+            if (result != null && !string.IsNullOrEmpty(result.Username))
+            {
+                isOtpStage = true;
+                targetPhone = !string.IsNullOrEmpty(result.Target) && result.Target != "UNKNOWN DEVICE" 
+                    ? result.Target 
+                    : "+91******9532"; // Fallback to verified number
+                errorMessage = "";
+            }
+            else
+            {
+                errorMessage = "IDENTIFICATION FAILED: ACCESS DENIED";
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"UPLINK ERROR: {ex.Message}";
+        }
+    }
+
+    private async Task HandleVerify()
+    {
+        var success = await Security.VerifyOtpAsync(username, otp);
+        if (success)
+        {
+            Navigation.NavigateTo("/");
+        }
+        else
+        {
+            errorMessage = "2FA VALIDATION FAILED";
+        }
+    }
+}

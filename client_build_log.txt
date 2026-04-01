@@ -1,0 +1,10 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  AegisSec.Client -> C:\Users\neelp\source\repos\dbms.net\AegisSec.Client\bin\Debug\net9.0\AegisSec.Client.dll
+  AegisSec.Client (Blazor output) -> C:\Users\neelp\source\repos\dbms.net\AegisSec.Client\bin\Debug\net9.0\wwwroot
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:12.30
