@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AegisSec.Client")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5c6e9d98eb5f961839bb0f24475a0410766f8160")]
 [assembly: System.Reflection.AssemblyProductAttribute("AegisSec.Client")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AegisSec.Client")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

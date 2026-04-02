@@ -1,0 +1,2 @@
+C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\publish\vercel.json
+C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\publish\web.config

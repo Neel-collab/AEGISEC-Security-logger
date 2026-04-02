@@ -1,0 +1,167 @@
+@page "/dashboard"
+@inject AegisSec.Client.Services.SecurityService Security
+@inject NavigationManager Nav
+@using AegisSec.Client.Models
+@implements IDisposable
+
+<div class="stat-grid">
+    <div class="stat-card">
+        <span class="label">Total Logs</span>
+        <span class="value neon-text">@stats?.TotalLogs</span>
+    </div>
+    <div class="stat-card">
+        <span class="label">High Threats</span>
+        <span class="value severity-high">@stats?.HighThreats</span>
+    </div>
+    <div class="stat-card">
+        <span class="label">Uplink Status</span>
+        <span class="value" style="color: @(stats != null ? "var(--neon-green)" : "var(--neon-pink)")">
+            @(stats != null ? "ONLINE" : "OFFLINE")
+        </span>
+    </div>
+</div>
+
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+    <h3 class="neon-text" style="margin: 0;">THREAT ANALYSIS MATRIX</h3>
+    <button class="btn-cyber" @onclick="RefreshData" style="padding: 5px 15px; font-size: 0.7rem;">MANUAL PULSE</button>
+</div>
+<div class="stat-grid" style="grid-template-columns: 1fr 1fr; gap: 40px;">
+    <div class="cyber-panel">
+        <h4 style="margin-bottom: 20px; font-size: 0.9rem;">NETWORK LOAD</h4>
+        <div class="chart-container">
+            @for (int i = 0; i < networkBars.Length; i++)
+            {
+                <div class="bar @(networkBars[i] > 80 ? "bar-danger" : "")" 
+                     style="height: @(networkBars[i])%; background: @(networkBars[i] > 80 ? "var(--neon-pink)" : "var(--neon-cyan)");"></div>
+            }
+        </div>
+    </div>
+    <div class="cyber-panel">
+        <h4 style="margin-bottom: 20px; font-size: 0.9rem;">SUBSYSTEM INTEGRITY</h4>
+        <div style="display: flex; flex-direction: column; gap: 15px;">
+            <div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 5px;">
+                    <span>SATELLITE UPLINK</span>
+                    <span class="neon-text">@(stats != null ? "ESTABLISHED" : "CONNECTING...")</span>
+                </div>
+                <div style="width: 100%; height: 4px; background: #1a1a1a; overflow: hidden;">
+                    <div class="progress-glow" style="width: @(stats != null ? "100%" : "10%");"></div>
+                </div>
+            </div>
+            
+            <div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 5px;">
+                    <span>FIREWALL UPLINK</span>
+                    <span class="severity-high">CAUTION</span>
+                </div>
+                <div style="width: 100%; height: 4px; background: #1a1a1a; overflow: hidden;">
+                    <div class="progress-glow" style="width: 45%; background: var(--neon-pink);"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3 class="neon-text" style="margin-bottom: 20px;">IMMUTABLE SECURITY LEDGER</h3>
+<div class="log-feed">
+    <table>
+        <thead>
+            <tr>
+                <th>Timestamp</th>
+                <th>Event</th>
+                <th>User</th>
+                <th>Level</th>
+                <th>IP Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (logs == null)
+            {
+                <tr><td colspan="5">Decrypting ledger...</td></tr>
+            }
+            else
+            {
+                @foreach (var log in logs)
+                {
+                    <tr>
+                        <td style="color: var(--text-secondary)">@log.Timestamp.ToString("HH:mm:ss")</td>
+                        <td style="font-weight: bold;">@log.EventType</td>
+                        <td>@log.Username</td>
+                        <td class="@GetSeverityClass(log.Severity)">@log.Severity</td>
+                        <td style="font-family: Consolas;">@log.SourceIP</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+@code {
+    private DashboardStats? stats;
+    private List<SecurityLog>? logs;
+    private System.Timers.Timer? _timer;
+    private int[] networkBars = new int[5] { 60, 80, 45, 90, 55 };
+    private Random rnd = new Random();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (!await Security.IsAuthenticatedAsync())
+        {
+            Nav.NavigateTo("/login");
+            return;
+        }
+
+        await RefreshData();
+        StartTimer();
+    }
+
+    private void StartTimer()
+    {
+        _timer = new System.Timers.Timer(5000); // 5 second pulse
+        _timer.Elapsed += async (sender, e) => await InvokeAsync(async () => await AutoRefresh());
+        _timer.AutoReset = true;
+        _timer.Enabled = true;
+    }
+
+    private async Task AutoRefresh()
+    {
+        // Background update without resetting UI to "Decrypting..."
+        var newStats = await Security.GetStatsAsync();
+        var newLogs = await Security.GetLogsAsync();
+
+        if (newStats != null) stats = newStats;
+        if (newLogs != null) logs = newLogs;
+
+        // Simulate real-time tracking
+        for (int i = 0; i < networkBars.Length; i++)
+        {
+            networkBars[i] = rnd.Next(20, 100);
+        }
+
+        StateHasChanged();
+    }
+
+    private async Task RefreshData()
+    {
+        stats = null;
+        logs = null;
+        StateHasChanged();
+        
+        await Task.Delay(300); // Visual feedback
+        stats = await Security.GetStatsAsync();
+        logs = await Security.GetLogsAsync();
+        StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        _timer?.Dispose();
+    }
+
+    private string GetSeverityClass(string severity) => severity switch
+    {
+        "HIGH" => "severity-high",
+        "MEDIUM" => "severity-medium",
+        _ => "severity-low"
+    };
+}

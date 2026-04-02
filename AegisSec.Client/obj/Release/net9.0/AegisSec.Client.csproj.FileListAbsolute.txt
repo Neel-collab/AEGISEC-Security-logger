@@ -199,8 +199,6 @@ C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\bin\Release
 C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\bin\Release\net9.0\wwwroot\_framework\icudt_CJK.tjcz0u77k5.dat
 C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\bin\Release\net9.0\wwwroot\_framework\icudt_EFIGS.tptq2av103.dat
 C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\bin\Release\net9.0\wwwroot\_framework\icudt_no_CJK.lfu7j35m59.dat
-C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\bin\Release\net9.0\wwwroot\_framework\AegisSec.Client.ubgma460hh.wasm
-C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\bin\Release\net9.0\wwwroot\_framework\AegisSec.Client.euazzkvmql.pdb
 C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\bin\Release\net9.0\wwwroot\_framework\blazor.boot.json
 C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\bin\Release\net9.0\wwwroot\_framework\blazor.webassembly.js.gz
 C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\bin\Release\net9.0\wwwroot\_framework\Microsoft.AspNetCore.Authorization.j0mj4vhukl.wasm.gz
@@ -403,8 +401,6 @@ C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\bin\Release
 C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\bin\Release\net9.0\wwwroot\_framework\icudt_CJK.tjcz0u77k5.dat.gz
 C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\bin\Release\net9.0\wwwroot\_framework\icudt_EFIGS.tptq2av103.dat.gz
 C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\bin\Release\net9.0\wwwroot\_framework\icudt_no_CJK.lfu7j35m59.dat.gz
-C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\bin\Release\net9.0\wwwroot\_framework\AegisSec.Client.ubgma460hh.wasm.gz
-C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\bin\Release\net9.0\wwwroot\_framework\AegisSec.Client.euazzkvmql.pdb.gz
 C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\bin\Release\net9.0\wwwroot\_framework\blazor.boot.json.gz
 C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\bin\Release\net9.0\vercel.json
 C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\bin\Release\net9.0\AegisSec.Client.staticwebassets.runtime.json
@@ -1071,9 +1067,6 @@ C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\obj\Release
 C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\obj\Release\net9.0\compressed\vv3o9dahw5-tjcz0u77k5.gz
 C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\obj\Release\net9.0\compressed\04xfw1vvgb-tptq2av103.gz
 C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\obj\Release\net9.0\compressed\lukiq0azqi-lfu7j35m59.gz
-C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\obj\Release\net9.0\compressed\7l9c4hmw2u-ubgma460hh.gz
-C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\obj\Release\net9.0\compressed\nduepm5bvt-euazzkvmql.gz
-C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\obj\Release\net9.0\compressed\oay8siccb3-rmk0wzvhub.gz
 C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\obj\Release\net9.0\staticwebassets.build.json
 C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\obj\Release\net9.0\staticwebassets.build.json.cache
 C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\obj\Release\net9.0\staticwebassets.development.json
@@ -1083,3 +1076,13 @@ C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\obj\Release
 C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\obj\Release\net9.0\refint\AegisSec.Client.dll
 C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\obj\Release\net9.0\AegisSec.Client.pdb
 C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\obj\Release\net9.0\ref\AegisSec.Client.dll
+C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\obj\Release\net9.0\AegisSec.Client.sourcelink.json
+C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\bin\Release\net9.0\wwwroot\_framework\AegisSec.Client.7u8ltjemrk.wasm
+C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\bin\Release\net9.0\wwwroot\_framework\AegisSec.Client.9bqgo54asa.pdb
+C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\bin\Release\net9.0\wwwroot\_framework\AegisSec.Client.7u8ltjemrk.wasm.gz
+C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\bin\Release\net9.0\wwwroot\_framework\AegisSec.Client.9bqgo54asa.pdb.gz
+C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\obj\Release\net9.0\compressed\d2q9ip8dhp-4zbd6phwb2.gz
+C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\obj\Release\net9.0\compressed\g69d1bg02o-asd1h6seyd.gz
+C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\obj\Release\net9.0\compressed\7l9c4hmw2u-7u8ltjemrk.gz
+C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\obj\Release\net9.0\compressed\nduepm5bvt-9bqgo54asa.gz
+C:\Users\neelp\source\repos\dbms.net\AegisSec_GitHub\AegisSec.Client\obj\Release\net9.0\compressed\oay8siccb3-y33w1dwbhc.gz

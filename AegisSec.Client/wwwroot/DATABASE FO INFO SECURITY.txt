@@ -1,0 +1,117 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\rachu> mongosh
+Current Mongosh Log ID: 699ddc42f59db9c58b628c9f
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.6.0
+Using MongoDB:          8.2.4
+Using Mongosh:          2.6.0
+mongosh 2.7.0 is available for download: https://www.mongodb.com/try/download/shell
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2026-02-24T08:07:03.552+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> use aegissec_db
+switched to db aegissec_db
+aegissec_db> db.createCollection("users")
+{ ok: 1 }
+aegissec_db> db.users.insertMany([
+...   { username: "admin", passwordHash: "HASH_admin", salt: "SALT_admin", role: "Admin", failedAttempts: 0, status: "ACTIVE", lastLogin: ISODate("2026-02-20T09:00:00Z") },
+...   { username: "sec_analyst", passwordHash: "HASH_analyst", salt: "SALT_analyst", role: "SecurityAnalyst", failedAttempts: 1, status: "ACTIVE", lastLogin: ISODate("2026-02-21T13:25:00Z") },
+...   { username: "auditor", passwordHash: "HASH_auditor", salt: "SALT_auditor", role: "Auditor", failedAttempts: 0, status: "ACTIVE", lastLogin: ISODate("2026-02-19T07:40:00Z") },
+...   { username: "user01", passwordHash: "HASH_user01", salt: "SALT_user01", role: "User", failedAttempts: 2, status: "ACTIVE", lastLogin: ISODate("2026-02-18T21:10:00Z") },
+...   { username: "insider_test", passwordHash: "HASH_insider", salt: "SALT_insider", role: "User", failedAttempts: 0, status: "SUSPENDED", lastLogin: ISODate("2026-02-10T02:10:00Z") }
+... ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('699ddcc3f59db9c58b628ca0'),
+    '1': ObjectId('699ddcc3f59db9c58b628ca1'),
+    '2': ObjectId('699ddcc3f59db9c58b628ca2'),
+    '3': ObjectId('699ddcc3f59db9c58b628ca3'),
+    '4': ObjectId('699ddcc3f59db9c58b628ca4')
+  }
+}
+aegissec_db> db.createCollection("security_logs")
+{ ok: 1 }
+aegissec_db> db.security_logs.insertMany([
+...   { eventType: "LOGIN_SUCCESS", username: "admin", severity: "LOW", module: "Auth", description: "Admin logged in", sourceIP: "10.0.0.12", timestamp: ISODate("2026-02-22T08:10:00Z") },
+...   { eventType: "FAILED_LOGIN", username: "user01", severity: "MEDIUM", module: "Auth", description: "Wrong password attempt", sourceIP: "203.0.113.45", timestamp: ISODate("2026-02-22T08:13:10Z") },
+...   { eventType: "PRIVILEGE_ESCALATION_ATTEMPT", username: "insider_test", severity: "HIGH", module: "AccessControl", description: "Tried to access admin section", sourceIP: "10.0.0.45", timestamp: ISODate("2026-02-21T23:55:00Z") },
+...   { eventType: "DATA_MODIFICATION", username: "sec_analyst", severity: "LOW", module: "Records", description: "Updated incident #342", sourceIP: "10.0.0.14", timestamp: ISODate("2026-02-20T14:02:30Z") },
+...   { eventType: "MULTIPLE_FAILED_LOGINS", username: "user01", severity: "HIGH", module: "Auth", description: "5 failed attempts within 2 minutes", sourceIP: "203.0.113.45", timestamp: ISODate("2026-02-22T08:15:00Z") }
+... ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('699ddcd5f59db9c58b628ca5'),
+    '1': ObjectId('699ddcd5f59db9c58b628ca6'),
+    '2': ObjectId('699ddcd5f59db9c58b628ca7'),
+    '3': ObjectId('699ddcd5f59db9c58b628ca8'),
+    '4': ObjectId('699ddcd5f59db9c58b628ca9')
+  }
+}
+aegissec_db> db.createCollection("alerts")
+{ ok: 1 }
+aegissec_db> db.alerts.insertMany([
+...   { alertId: "ALRT-0001", severity: "CRITICAL", title: "Privilege Escalation Attempt", description: "Unauthorized admin access", status: "OPEN", createdAt: ISODate("2026-02-21T23:56:00Z"), assignedTo: "sec_analyst" },
+...   { alertId: "ALRT-0002", severity: "HIGH", title: "Multiple Failed Logins", description: "Possible brute force attack", status: "OPEN", createdAt: ISODate("2026-02-22T08:16:00Z"), assignedTo: "sec_analyst" },
+...   { alertId: "ALRT-0003", severity: "MEDIUM", title: "Late Hour Access", description: "Login at 2AM", status: "CLOSED", createdAt: ISODate("2026-02-10T02:12:00Z"), assignedTo: "auditor" },
+...   { alertId: "ALRT-0004", severity: "LOW", title: "Policy Update Reminder", description: "Security policy updated", status: "OPEN", createdAt: ISODate("2026-02-18T09:00:00Z"), assignedTo: "admin" },
+...   { alertId: "ALRT-0005", severity: "HIGH", title: "Data Modification Spike", description: "High rate of edits", status: "OPEN", createdAt: ISODate("2026-02-20T14:05:00Z"), assignedTo: "sec_analyst" }
+... ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('699ddceaf59db9c58b628caa'),
+    '1': ObjectId('699ddceaf59db9c58b628cab'),
+    '2': ObjectId('699ddceaf59db9c58b628cac'),
+    '3': ObjectId('699ddceaf59db9c58b628cad'),
+    '4': ObjectId('699ddceaf59db9c58b628cae')
+  }
+}
+aegissec_db> db.createCollection("risk_scores")
+{ ok: 1 }
+aegissec_db> db.risk_scores.insertMany([
+...   { entityId: "user:admin", score: 8, factors: ["high-privilege","sso"], lastUpdated: ISODate("2026-02-22T09:00:00Z") },
+...   { entityId: "user:user01", score: 72, factors: ["failed-logins","unusual-ip"], lastUpdated: ISODate("2026-02-22T08:20:00Z") },
+...   { entityId: "user:insider_test", score: 85, factors: ["privilege-escalation","late-login"], lastUpdated: ISODate("2026-02-21T23:58:00Z") },
+...   { entityId: "system:backend", score: 20, factors: ["outdated-patch"], lastUpdated: ISODate("2026-02-18T11:00:00Z") },
+...   { entityId: "user:sec_analyst", score: 15, factors: ["trusted-analyst"], lastUpdated: ISODate("2026-02-20T14:10:00Z") }
+... ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('699ddcf9f59db9c58b628caf'),
+    '1': ObjectId('699ddcf9f59db9c58b628cb0'),
+    '2': ObjectId('699ddcf9f59db9c58b628cb1'),
+    '3': ObjectId('699ddcf9f59db9c58b628cb2'),
+    '4': ObjectId('699ddcf9f59db9c58b628cb3')
+  }
+}
+aegissec_db> db.createCollection("system_settings")
+{ ok: 1 }
+aegissec_db> db.system_settings.insertMany([
+...   { key: "auth_policy", value: { maxFailedAttempts: 5, lockoutDurationMinutes: 30, sessionTimeoutMinutes: 20 }, description: "Authentication policy", updatedAt: ISODate("2026-02-01T10:00:00Z") },
+...   { key: "alerting_policy", value: { highSeverityThreshold: 70, emailNotifications: true, escalationMinutes: 15 }, description: "Alert settings", updatedAt: ISODate("2026-02-01T10:05:00Z") },
+...   { key: "encryption", value: { algorithm: "AES-256", keyRotationDays: 90 }, description: "Encryption settings", updatedAt: ISODate("2026-02-01T10:07:00Z") },
+...   { key: "logging", value: { retentionDays: 365, immutableAppendOnly: true }, description: "Log retention and immutability", updatedAt: ISODate("2026-02-01T10:09:00Z") },
+...   { key: "ui", value: { theme: "dark", dashboardRefreshSeconds: 10 }, description: "UI preferences", updatedAt: ISODate("2026-02-01T10:12:00Z") }
+... ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('699ddd0bf59db9c58b628cb4'),
+    '1': ObjectId('699ddd0bf59db9c58b628cb5'),
+    '2': ObjectId('699ddd0bf59db9c58b628cb6'),
+    '3': ObjectId('699ddd0bf59db9c58b628cb7'),
+    '4': ObjectId('699ddd0bf59db9c58b628cb8')
+  }
+}
+aegissec_db> .exit
